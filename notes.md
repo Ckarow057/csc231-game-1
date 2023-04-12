@@ -10,3 +10,9 @@ std::shared_ptr<Actor> actor;
 };
 ```
 Remeber that Actions contain a shared_ptr<Actor> called actor
+
+##Results
+return these from Action::perform()
+- success() it worked
+- failure() take another turn
+- aternative(do_this_instead{})
