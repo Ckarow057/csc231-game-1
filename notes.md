@@ -16,3 +16,9 @@ return these from Action::perform()
 - success() it worked
 - failure() take another turn
 - aternative(do_this_instead{})
+
+##MOVING
+- Vec; stores (x,y) positions, (0,0) is bottom left
+- Actor contains public member functions
+- Tiles; Tile& tile = engine.dungeon.tiles(position)
+- Tile; Properties = is_wall() , bool walkable , Actor* actor
