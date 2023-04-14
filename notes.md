@@ -44,3 +44,10 @@ Vec operator-(const Vec& a, const Vec& b);
 |-1,  0 |left
 | 0,  1 |up
 | 0, -1 |down
+
+##Actor
+```C++
+void change_direction(Vec);
+void move_to(Vec);
+Vec get_position();
+```
