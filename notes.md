@@ -22,3 +22,25 @@ return these from Action::perform()
 - Actor contains public member functions
 - Tiles; Tile& tile = engine.dungeon.tiles(position)
 - Tile; Properties = is_wall() , bool walkable , Actor* actor
+
+##VEC
+- 2D vector
+```C++
+// engine/util/vec.h
+struct Vec {
+int x, y;
+};
+```
+- Overloaded Operators (+, -)
+```C++
+Vec operator+(const Vec& a, const Vec& b);
+Vec operator-(const Vec& a, const Vec& b);
+```
+
+
+|x,  y |direction
+|----------------
+| 1,  0 |right
+|-1,  0 |left
+| 0,  1 |up
+| 0, -1 |down
