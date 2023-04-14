@@ -9,6 +9,6 @@ Move::Move(Vec direction) : direction{direction} {}
 Result Move::perform(Engine&) {
     Vec position = actor->get_position();
     actor->move_to(position + direction);
-    std::cout << position << '\n';
+    // std::cout << position << '\n';
     return success();
 }
