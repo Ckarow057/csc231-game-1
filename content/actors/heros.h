@@ -3,6 +3,7 @@
 #include "herotype.h"
 #include "move.h"
 #include "none.h"
+#include "rest.h"
 
 namespace Heros {
 // Reaction = std::function<std::unique_ptr<Action>()>
@@ -23,11 +24,11 @@ const std::unordered_map<std::string, Reaction> keybindings = {
     {"W",
      []() {
          return std::make_unique<Move>(Vec{0, 1});
-     }}
+     }},
+    {"R", []() { return std::make_unique<Rest>(); }}
 
 };
 constexpr int default_speed{8};
 const HeroType nobody{"necro", default_speed, 1, std::make_shared<None>(),
                       keybindings};
 };  // namespace Heros
-    // namespace Heros
