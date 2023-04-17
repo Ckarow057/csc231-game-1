@@ -3,7 +3,6 @@
 #include "herotype.h"
 #include "move.h"
 #include "none.h"
-#include "rest.h"
 
 namespace Heros {
 // Reaction = std::function<std::unique_ptr<Action>()>
@@ -24,10 +23,6 @@ const std::unordered_map<std::string, Reaction> keybindings = {
     {"W",
      []() {
          return std::make_unique<Move>(Vec{0, 1});
-     }},
-    {"R",
-     []() {
-         return std::make_unique<Rest>(Vec{0, 1});
      }}
 
 };
