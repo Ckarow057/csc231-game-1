@@ -11,9 +11,8 @@ Result OpenDoor::perform(Engine& engine) {
     if (tile.is_door()) {
         Door& door = engine.dungeon.doors.at(position);
         tile.walkable = true;
-        actor->move_to(position);
-        actor->change_direction(direction);
         door.open();
+        actor->move_to(position);
     }
     return success();
 }
