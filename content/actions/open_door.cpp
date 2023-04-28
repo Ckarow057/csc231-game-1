@@ -5,9 +5,9 @@
 #include "move.h"
 #include "updatefov.h"
 
+OpenDoor::OpenDoor(Vec position) : position{position} {}
+
 Result OpenDoor::perform(Engine& engine) {
-    Vec direction = actor->get_direction();
-    Vec position = actor->get_position() + direction;
     Tile& tile = engine.dungeon.tiles(position);
     Door& door = engine.dungeon.doors.at(position);
     tile.walkable = true;

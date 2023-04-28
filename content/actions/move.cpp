@@ -19,7 +19,11 @@ Result Move::perform(Engine& engine) {
     }
 
     if (tile.is_door()) {
-        return alternative(OpenDoor());
+        return alternative(OpenDoor(position));
+    }
+
+    if (tile.actor) {
+        return failure();
     }
 
     actor->move_to(position);
