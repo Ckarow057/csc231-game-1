@@ -22,9 +22,9 @@ Result Move::perform(Engine& engine) {
         return alternative(OpenDoor(position));
     }
 
-    if (tile.actor) {
-        return failure();
-    }
+    // if (tile.actor) {
+    //     return failure();
+    // }
 
     actor->move_to(position);
     return success();
