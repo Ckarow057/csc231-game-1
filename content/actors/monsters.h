@@ -9,4 +9,7 @@ MonsterType goblin();
 MonsterType orc_masked();
 
 MonsterType ogre();
+
+MonsterType demon_big();
+
 }  // namespace Monsters

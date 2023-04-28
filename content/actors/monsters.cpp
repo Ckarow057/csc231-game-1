@@ -28,4 +28,10 @@ MonsterType ogre() {
             default_behavior};
 }
 
+MonsterType demon_big() {
+    int health = 4;
+    return {"demon_big", default_speed, health, std::make_shared<None>(),
+            default_behavior};
+}
+
 }  // namespace Monsters
