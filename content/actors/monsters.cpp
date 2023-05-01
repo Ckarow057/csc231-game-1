@@ -30,28 +30,36 @@ std::unique_ptr<Action> default_behavior(Engine& engine, Monster& me) {
 }
 
 constexpr int default_speed{8};
+constexpr int double_speed{16};
+constexpr int half_speed{4};
 
 MonsterType goblin() {
     int health = 2;
-    return {"goblin", default_speed, health, std::make_shared<None>(),
+    return {"goblin", double_speed, health, std::make_shared<None>(),
             default_behavior};
 }
 
 MonsterType orc_masked() {
     int health = 3;
-    return {"orc_masked", default_speed, health, std::make_shared<None>(),
+    return {"orc_masked", double_speed, health, std::make_shared<None>(),
             default_behavior};
 }
 
 MonsterType ogre() {
     int health = 4;
-    return {"ogre", default_speed, health, std::make_shared<None>(),
+    return {"ogre", half_speed, health, std::make_shared<None>(),
             default_behavior};
 }
 
 MonsterType demon_big() {
     int health = 4;
-    return {"demon_big", default_speed, health, std::make_shared<None>(),
+    return {"demon_big", half_speed, health, std::make_shared<None>(),
+            default_behavior};
+}
+
+MonsterType skeleton() {
+    int health = 4;
+    return {"skeleton", default_speed, health, std::make_shared<None>(),
             default_behavior};
 }
 

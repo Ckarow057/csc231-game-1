@@ -12,4 +12,6 @@ MonsterType ogre();
 
 MonsterType demon_big();
 
+MonsterType skeleton();
+
 }  // namespace Monsters
