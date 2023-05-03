@@ -3,6 +3,7 @@
 #include "axe.h"
 #include "cleaver.h"
 #include "engine.h"
+#include "knife.h"
 #include "monster.h"
 #include "move.h"
 #include "none.h"
@@ -37,32 +38,32 @@ constexpr int double_speed{16};
 constexpr int half_speed{4};
 
 MonsterType goblin() {
-    int health = 10;
-    return {"goblin", double_speed, health, std::make_shared<Cleaver>(1),
+    int health = 3;
+    return {"goblin", double_speed, health, std::make_shared<Knife>(1),
             default_behavior};
 }
 
 MonsterType orc_masked() {
-    int health = 10;
-    return {"orc_masked", double_speed, health, std::make_shared<Axe>(1),
+    int health = 6;
+    return {"orc_masked", double_speed, health, std::make_shared<Axe>(3),
             default_behavior};
 }
 
 MonsterType ogre() {
-    int health = 4;
-    return {"ogre", half_speed, health, std::make_shared<None>(),
+    int health = 10;
+    return {"ogre", half_speed, health, std::make_shared<Knife>(1),
             default_behavior};
 }
 
 MonsterType demon_big() {
-    int health = 4;
-    return {"demon_big", half_speed, health, std::make_shared<None>(),
+    int health = 12;
+    return {"demon_big", half_speed, health, std::make_shared<Cleaver>(3),
             default_behavior};
 }
 
 MonsterType skeleton() {
-    int health = 10;
-    return {"skeleton", default_speed, health, std::make_shared<Sword_big>(1),
+    int health = 1;
+    return {"skeleton", default_speed, health, std::make_shared<Sword_big>(4),
             default_behavior};
 }
 
