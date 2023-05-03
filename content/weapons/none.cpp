@@ -1,6 +1,9 @@
 #include "none.h"
 
-None::None()
-    :Weapon("none", 0) {}
+#include <iostream>
 
-void None::use(Engine&, Actor&, Actor&) {}
+None::None() : Weapon("none", 0) {}
+
+void None::use(Engine&, Actor&, Actor&) {
+    std::cout << "You bravely attack with nothing" << '\n';
+}

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "cleaver.h"
 #include "close_door.h"
 #include "herotype.h"
 #include "move.h"
@@ -32,6 +33,6 @@ const std::unordered_map<std::string, Reaction> keybindings = {
 
 };
 constexpr int default_speed{8};
-const HeroType nobody{"necro", default_speed, 1, std::make_shared<None>(),
+const HeroType nobody{"necro", default_speed, 1, std::make_shared<Cleaver>(15),
                       keybindings};
 };  // namespace Heros

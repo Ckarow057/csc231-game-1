@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "actor.h"
+#include "attack.h"
 #include "engine.h"
 #include "open_door.h"
 #include "rest.h"
@@ -21,7 +22,11 @@ Result Move::perform(Engine& engine) {
 
     // attacking if tile.actor
     if (tile.actor) {
-        return alternative(Rest());
+        if (!actor->team) {
+            return alternative(Attack(*tile.actor));
+        } else {
+            return alternative(Rest());
+        }
     }
 
     if (tile.is_door()) {
