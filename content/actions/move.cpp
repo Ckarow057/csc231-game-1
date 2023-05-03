@@ -12,7 +12,6 @@ Move::Move(Vec direction) : direction{direction} {}
 
 Result Move::perform(Engine& engine) {
     Vec position = actor->get_position() + direction;
-    actor->get_direction();
     Tile& tile = engine.dungeon.tiles(position);
     actor->change_direction(direction);
 
@@ -23,14 +22,14 @@ Result Move::perform(Engine& engine) {
     // attacking if tile.actor
     if (tile.actor) {
         if (!actor->team) {
-            return alternative(Attack(*tile.actor));
+            return alternative(Attack{*tile.actor});
         } else {
             return alternative(Rest());
         }
     }
 
     if (tile.is_door()) {
-        return alternative(OpenDoor(position));
+        return alternative(OpenDoor{position});
     }
 
     actor->move_to(position);
