@@ -1,6 +1,7 @@
 #pragma once
 #include "action.h"
 #include "actor.h"
+#include "die.h"
 #include "engine.h"
 #include "event.h"
 

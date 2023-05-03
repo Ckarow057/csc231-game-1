@@ -37,13 +37,13 @@ constexpr int double_speed{16};
 constexpr int half_speed{4};
 
 MonsterType goblin() {
-    int health = 2;
+    int health = 10;
     return {"goblin", double_speed, health, std::make_shared<Cleaver>(1),
             default_behavior};
 }
 
 MonsterType orc_masked() {
-    int health = 3;
+    int health = 10;
     return {"orc_masked", double_speed, health, std::make_shared<Axe>(1),
             default_behavior};
 }
@@ -61,7 +61,7 @@ MonsterType demon_big() {
 }
 
 MonsterType skeleton() {
-    int health = 1;
+    int health = 10;
     return {"skeleton", default_speed, health, std::make_shared<Sword_big>(1),
             default_behavior};
 }

@@ -7,6 +7,7 @@
 #include "none.h"
 #include "open_door.h"
 #include "rest.h"
+#include "sword_big.h"
 
 namespace Heros {
 // Reaction = std::function<std::unique_ptr<Action>()>
@@ -29,10 +30,10 @@ const std::unordered_map<std::string, Reaction> keybindings = {
          return std::make_unique<Move>(Vec{0, 1});
      }},
     {"R", []() { return std::make_unique<Rest>(); }},
-    {"E", []() { return std::make_unique<CloseDoor>(); }},
+    {"E", []() { return std::make_unique<CloseDoor>(); }}
 
 };
 constexpr int default_speed{8};
-const HeroType nobody{"necro", default_speed, 10, std::make_shared<Cleaver>(2),
-                      keybindings};
+const HeroType nobody{"necro", default_speed, 10,
+                      std::make_shared<Sword_big>(4), keybindings};
 };  // namespace Heros
