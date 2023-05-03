@@ -1,11 +1,14 @@
 #include "monsters.h"
 
+#include "axe.h"
+#include "cleaver.h"
 #include "engine.h"
 #include "monster.h"
 #include "move.h"
 #include "none.h"
 #include "randomness.h"
 #include "rest.h"
+#include "sword_big.h"
 #include "wander.h"
 
 namespace Monsters {
@@ -34,32 +37,32 @@ constexpr int double_speed{16};
 constexpr int half_speed{4};
 
 MonsterType goblin() {
-    int health = 30;
-    return {"goblin", double_speed, health, std::make_shared<None>(),
+    int health = 2;
+    return {"goblin", double_speed, health, std::make_shared<Cleaver>(1),
             default_behavior};
 }
 
 MonsterType orc_masked() {
-    int health = 30;
-    return {"orc_masked", double_speed, health, std::make_shared<None>(),
+    int health = 3;
+    return {"orc_masked", double_speed, health, std::make_shared<Axe>(1),
             default_behavior};
 }
 
 MonsterType ogre() {
-    int health = 30;
+    int health = 4;
     return {"ogre", half_speed, health, std::make_shared<None>(),
             default_behavior};
 }
 
 MonsterType demon_big() {
-    int health = 30;
+    int health = 4;
     return {"demon_big", half_speed, health, std::make_shared<None>(),
             default_behavior};
 }
 
 MonsterType skeleton() {
-    int health = 30;
-    return {"skeleton", default_speed, health, std::make_shared<None>(),
+    int health = 1;
+    return {"skeleton", default_speed, health, std::make_shared<Sword_big>(1),
             default_behavior};
 }
 
