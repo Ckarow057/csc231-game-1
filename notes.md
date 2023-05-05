@@ -51,3 +51,7 @@ void change_direction(Vec);
 void move_to(Vec);
 Vec get_position();
 ```
+
+
+(x,y) -> atan2(y, x)
+-theta + 90
