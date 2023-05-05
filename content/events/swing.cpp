@@ -1,9 +1,9 @@
-#include "thrust.h"
+#include "swing.h"
 
 #include "engine.h"
 #include "hit.h"
 
-Thrust::Thrust(Sprite& sprite, Vec direction, Actor& defender, int damage)
+Swing::Swing(Sprite& sprite, Vec direction, Actor& defender, int damage)
     : Event{5},
       sprite{sprite},
       original{sprite},
@@ -11,12 +11,12 @@ Thrust::Thrust(Sprite& sprite, Vec direction, Actor& defender, int damage)
       defender{defender},
       damage{damage} {}
 
-void Thrust::execute(Engine&) {
-    sprite.shift += direction * 3;
-    // sprite.angle += 45;
+void Swing::execute(Engine&) {
+    sprite.shift += direction;
+    sprite.angle += 33;
 }
 
-void Thrust::when_done(Engine& engine) {
+void Swing::when_done(Engine& engine) {
     sprite = original;
     engine.events.add(Hit(defender, damage));
 }

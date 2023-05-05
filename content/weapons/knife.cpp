@@ -9,7 +9,6 @@
 Knife::Knife(int damage) : Weapon{"knife", damage} {}
 
 void Knife::use(Engine& engine, Actor& attacker, Actor& defender) {
-    std::cout << "swang" << '\n';
     Vec direction = defender.get_position() - attacker.get_position();
     engine.events.add(Thrust{sprite, direction, defender, damage});
 }
