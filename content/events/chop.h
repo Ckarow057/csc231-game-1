@@ -5,16 +5,15 @@
 
 class Actor;
 
-class Swing : public Event {
+class Chop : public Event {
 public:
-    Swing(Sprite& sprite, Vec direction, Actor& defender, int damage);
+    Chop(Sprite& sprite, Vec direction, Actor& defender, int damage);
     void execute(Engine& engine) override;
     void when_done(Engine& engine) override;
 
 private:
     Sprite& sprite;
     Sprite original;
-    // Vec direction;
     Actor& defender;
     int damage;
     double starting_angle, delta_angle;

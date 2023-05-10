@@ -4,27 +4,30 @@
 #include "hit.h"
 
 Thrust::Thrust(Sprite& sprite, Vec direction, Actor& defender, int damage)
-    : Event{5},
+    : Event{3},
       sprite{sprite},
       original{sprite},
       direction{direction},
       defender{defender},
-      damage{damage} {}
+      damage{damage} {
+    sprite.shift.y -= (sprite.size.y) / 4;
+    sprite.shift.x -= (sprite.size.x) / 2;
+
+    if (direction == Vec{1, 0}) {
+        sprite.angle = 90;
+    } else if (direction == Vec{-1, 0}) {
+        sprite.angle = -90;
+    } else if (direction == Vec{0, 1}) {
+        sprite.angle = 0;
+        this->direction = direction * -1;
+    } else if (direction == Vec{0, -1}) {
+        sprite.angle = 180;
+        this->direction = direction * -1;
+    }
+}
 
 void Thrust::execute(Engine&) {
-    sprite.shift += direction;
-    if (direction.x == 1) {
-        sprite.angle = 90;
-    } else if (direction.x == -1) {
-        sprite.flip = true;
-        sprite.angle = 270;
-    } else if (direction.y == 1) {
-        sprite.angle = 0;
-        sprite.shift += direction * -3;
-    } else if (direction.y == -1) {
-        sprite.angle = 180;
-        sprite.shift += direction * -2;
-    }
+    sprite.shift += direction * 1;
 }
 
 void Thrust::when_done(Engine& engine) {
