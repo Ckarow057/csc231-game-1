@@ -32,7 +32,7 @@ void Wabbajack::use(Engine& engine, Actor& attacker, Actor& defender) {
         engine.events.add(Magic{defender.get_position(), 2});
     } else if (probability == 4) {
         if (attacker.health <= attacker.max_health) {
-            attacker.health += 2;
+            attacker.health += 3;
         }
     } else if (probability == 5) {
         if (defender.health <= defender.max_health) {
