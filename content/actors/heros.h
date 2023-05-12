@@ -9,6 +9,7 @@
 #include "none.h"
 #include "open_door.h"
 #include "rest.h"
+#include "superstick.h"
 #include "sword_big.h"
 
 namespace Heros {
@@ -36,6 +37,6 @@ const std::unordered_map<std::string, Reaction> keybindings = {
 
 };
 constexpr int default_speed{8};
-const HeroType nobody{"necro", default_speed, 20, std::make_shared<Axe>(3),
-                      keybindings};
+const HeroType nobody{"necro", default_speed, 20,
+                      std::make_shared<Superstick>(3), keybindings};
 };  // namespace Heros

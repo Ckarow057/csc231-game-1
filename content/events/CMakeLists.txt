@@ -5,6 +5,12 @@ add_library(events
   thrust.cpp
   swing.cpp
   chop.cpp
+  lightning.cpp
+  fire.cpp
+  explosion.cpp
+  magic.cpp
+  gas.cpp
+  wonderstick.cpp
   )
 
 target_include_directories(events PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

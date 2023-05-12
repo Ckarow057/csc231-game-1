@@ -4,6 +4,7 @@ add_library(weapons
   axe.cpp
   sword_big.cpp
   knife.cpp
+  superstick.cpp
   )
 
 target_include_directories(weapons PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

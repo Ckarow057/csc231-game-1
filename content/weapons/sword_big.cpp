@@ -3,7 +3,12 @@
 #include <iostream>
 
 #include "engine.h"
+#include "explosion.h"
+#include "fire.h"
+#include "gas.h"
 #include "hit.h"
+#include "lightning.h"
+#include "magic.h"
 #include "swing.h"
 
 Sword_big::Sword_big(int damage) : Weapon{"sword_big", damage} {}

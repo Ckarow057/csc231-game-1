@@ -45,25 +45,25 @@ MonsterType goblin() {
 
 MonsterType orc_masked() {
     int health = 6;
-    return {"orc_masked", double_speed, health, std::make_shared<Axe>(3),
+    return {"orc_masked", double_speed, health, std::make_shared<Axe>(2),
             default_behavior};
 }
 
 MonsterType ogre() {
-    int health = 10;
-    return {"ogre", half_speed, health, std::make_shared<Knife>(1),
+    int health = 25;
+    return {"ogre", half_speed, health, std::make_shared<Cleaver>(4),
             default_behavior};
 }
 
 MonsterType demon_big() {
     int health = 12;
-    return {"demon_big", half_speed, health, std::make_shared<Cleaver>(3),
+    return {"demon_big", half_speed, health, std::make_shared<Cleaver>(2),
             default_behavior};
 }
 
 MonsterType skeleton() {
     int health = 1;
-    return {"skeleton", default_speed, health, std::make_shared<Sword_big>(4),
+    return {"skeleton", default_speed, health, std::make_shared<Sword_big>(2),
             default_behavior};
 }
 
