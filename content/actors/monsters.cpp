@@ -9,7 +9,9 @@
 #include "none.h"
 #include "randomness.h"
 #include "rest.h"
+#include "spell_cast.h"
 #include "sword_big.h"
+#include "wabbajack.h"
 #include "wander.h"
 
 namespace Monsters {
@@ -67,4 +69,27 @@ MonsterType skeleton() {
             default_behavior};
 }
 
-}  // namespace Monsters
+MonsterType necromancer() {
+    int health = 2;
+    return {"necromancer", double_speed, health, std::make_shared<Wabbajack>(0),
+            default_behavior};
+}
+
+MonsterType zombie() {
+    int health = 4;
+    return {"zombie", half_speed, health, std::make_shared<Knife>(1),
+            default_behavior};
+}
+
+MonsterType demon_tiny() {
+    int health = 3;
+    return {"demon_tiny", double_speed, health, std::make_shared<Knife>(1),
+            default_behavior};
+}
+
+MonsterType shaman() {
+    int health = 5;
+    return {"orc_shaman", default_speed, health,
+            std::make_shared<Spell_cast>(3), default_behavior};
+}
+} 

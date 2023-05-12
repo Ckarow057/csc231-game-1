@@ -14,4 +14,12 @@ MonsterType demon_big();
 
 MonsterType skeleton();
 
+MonsterType necromancer();
+
+MonsterType zombie();
+
+MonsterType demon_tiny();
+
+MonsterType shaman();
+
 }  // namespace Monsters

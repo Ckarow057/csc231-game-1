@@ -3,8 +3,8 @@
 #include "actor.h"
 #include "weapon.h"
 
-class Superstick : public Weapon {
+class Spell_cast : public Weapon {
 public:
-    Superstick(int damage);
+    Spell_cast(int damage);
     void use(Engine& engine, Actor& attacker, Actor& defender) override;
 };

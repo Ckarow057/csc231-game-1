@@ -1,7 +1,8 @@
-#include "superstick.h"
+#include "wabbajack.h"
 
 #include <iostream>
 
+#include "cast.h"
 #include "engine.h"
 #include "explosion.h"
 #include "fire.h"
@@ -11,11 +12,10 @@
 #include "magic.h"
 #include "randomness.h"
 #include "swing.h"
-#include "wonderstick.h"
 
-Superstick::Superstick(int damage) : Weapon{"staff_red", damage} {}
+Wabbajack::Wabbajack(int damage) : Weapon{"staff_red", damage} {}
 
-void Superstick::use(Engine& engine, Actor& attacker, Actor& defender) {
+void Wabbajack::use(Engine& engine, Actor& attacker, Actor& defender) {
     Vec direction = defender.get_position() - attacker.get_position();
 
     engine.events.add(WonderStick{sprite, direction, defender, 0});

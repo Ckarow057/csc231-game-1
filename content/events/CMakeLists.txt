@@ -10,7 +10,7 @@ add_library(events
   explosion.cpp
   magic.cpp
   gas.cpp
-  wonderstick.cpp
+  cast.cpp
   )
 
 target_include_directories(events PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

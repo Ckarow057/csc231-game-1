@@ -9,8 +9,8 @@
 #include "none.h"
 #include "open_door.h"
 #include "rest.h"
-#include "superstick.h"
 #include "sword_big.h"
+#include "wabbajack.h"
 
 namespace Heros {
 // Reaction = std::function<std::unique_ptr<Action>()>
@@ -38,5 +38,5 @@ const std::unordered_map<std::string, Reaction> keybindings = {
 };
 constexpr int default_speed{8};
 const HeroType nobody{"necro", default_speed, 20,
-                      std::make_shared<Superstick>(3), keybindings};
+                      std::make_shared<Wabbajack>(3), keybindings};
 };  // namespace Heros
