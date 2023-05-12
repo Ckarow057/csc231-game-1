@@ -5,7 +5,7 @@
 
 WonderStick::WonderStick(Sprite& sprite, Vec direction, Actor& defender,
                          int damage)
-    : Event{3},
+    : Event{4},
       sprite{sprite},
       original{sprite},
       direction{direction},
@@ -16,14 +16,19 @@ WonderStick::WonderStick(Sprite& sprite, Vec direction, Actor& defender,
 
     if (direction == Vec{1, 0}) {
         sprite.angle = 15;
+        sprite.shift.y += 1;
     } else if (direction == Vec{-1, 0}) {
         sprite.angle = -15;
+        sprite.shift.y += 1;
+
     } else if (direction == Vec{0, 1}) {
-        sprite.angle = 15;
+        sprite.angle = 0;
+        sprite.shift.y += 1;
+
         // this->direction = direction * -1;
     } else if (direction == Vec{0, -1}) {
-        sprite.angle = -15;
-        // this->direction = direction * -1;
+        sprite.angle = 0;
+        sprite.shift.y += 1;
     }
 }
 
