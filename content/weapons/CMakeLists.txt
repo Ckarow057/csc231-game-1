@@ -6,6 +6,7 @@ add_library(weapons
   knife.cpp
   wabbajack.cpp
   spell_cast.cpp
+  fire_breath.cpp
   )
 
 target_include_directories(weapons PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

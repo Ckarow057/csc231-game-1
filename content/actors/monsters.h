@@ -22,4 +22,6 @@ MonsterType demon_tiny();
 
 MonsterType shaman();
 
+MonsterType dragon();
+
 }  // namespace Monsters

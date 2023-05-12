@@ -3,6 +3,7 @@
 #include "axe.h"
 #include "cleaver.h"
 #include "engine.h"
+#include "fire_breath.h"
 #include "knife.h"
 #include "monster.h"
 #include "move.h"
@@ -92,4 +93,10 @@ MonsterType shaman() {
     return {"orc_shaman", default_speed, health,
             std::make_shared<Spell_cast>(3), default_behavior};
 }
-} 
+
+MonsterType dragon() {
+    int health = 5;
+    return {"dragon", default_speed, health, std::make_shared<Fire_breath>(3),
+            default_behavior};
+}
+}  // namespace Monsters

@@ -17,6 +17,7 @@ int main() {
     for (int i{0}; i < 2; ++i) {
         engine.create_monster(Monsters::shaman());
         engine.create_monster(Monsters::orc_masked());
+        engine.create_monster(Monsters::dragon());
     }
 
     for (int i{0}; i < 1; ++i) {
