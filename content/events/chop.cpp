@@ -5,7 +5,7 @@
 #include "engine.h"
 #include "hit.h"
 
-constexpr int duration = 7;
+constexpr int duration = 4;
 
 Chop::Chop(Sprite& sprite, Vec direction, Actor& defender, int damage)
     : Event{duration},

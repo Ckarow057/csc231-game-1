@@ -20,23 +20,30 @@ void Wabbajack::use(Engine& engine, Actor& attacker, Actor& defender) {
 
     engine.events.add(WonderStick{sprite, direction, defender, 0});
 
-    int probability{randint(0, 5)};
+    int probability{randint(0, 8)};
 
     if (probability == 0) {
         engine.events.add(Lightning{defender.get_position(), 5});
     } else if (probability == 1) {
         engine.events.add(Explosion{defender.get_position(), 4});
     } else if (probability == 2) {
-        engine.events.add(Gas{defender.get_position(), 1});
+        engine.events.add(Gas{defender.get_position(), 3});
     } else if (probability == 3) {
         engine.events.add(Magic{defender.get_position(), 2});
     } else if (probability == 4) {
-        if (attacker.health <= attacker.max_health) {
+        if (attacker.health < attacker.max_health) {
             attacker.health += 3;
         }
     } else if (probability == 5) {
-        if (defender.health <= defender.max_health) {
+        if (defender.health < defender.max_health) {
             defender.health += 1;
         }
+    } else if (probability == 6) {
+        defender.team = attacker.team;
+    } else if (probability == 7) {
+        defender.alive = false;
+    } else if (probability == 8) {
+        attacker.max_health += 5;
+        // attacker.health = attacker.max_health;
     }
 }
