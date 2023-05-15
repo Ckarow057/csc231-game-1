@@ -1,7 +1,7 @@
 #include "chop.h"
 
 #include <iostream>
-
+#include <cmath>
 #include "engine.h"
 #include "hit.h"
 
